@@ -249,8 +249,32 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+                  <!-- <a href="#" class="btn btn-default btn-flat">Sign out</a> -->
                 </div>
+             <!--    <div>
+                   @if (Auth::guest())
+                  <a class="nav-link" href="{{ route('login')}}">Login</a>
+              @else
+                  <a class="nav-link" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+              @endif
+                </div> -->
               </li>
             </ul>
           </li>

@@ -44,6 +44,18 @@
 <script src="{{ asset('admin/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/dist/js/demo.js')}}"></script>﻿
+<!-- CK Editor -->
+<!-- <script src="{{asset('admin/bower_components/ckeditor/ckeditor.js')}}"></script>
+<script>
+  
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+</script> -->
 @section('footerSection')
   @show
   </footer>

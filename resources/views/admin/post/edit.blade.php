@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('headSection')
-<link rel="stylesheet" href="{{asset('admin/bower_components/select2/dist/css/select2.min.css')}}">>
+<link rel="stylesheet" href="{{asset('admin/bower_components/select2/dist/css/select2.min.css')}}">
 @endsection
 @section('main-content')
 <!-- Content Wrapper. Contains page content -->
@@ -31,7 +31,7 @@
         @include('includes.messages')
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="{{route('post.update',$post->id)}}" method="post">
+        <form role="form" action="{{route('post.update',$post->id)}}" method="post" enctype="multipart/form-data">
          {{csrf_field()}}
          {{method_field('PATCH')}}
          <div class="box-body">
@@ -72,7 +72,14 @@
               <label>Select Tags</label>
               <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="tags[]>
                 @foreach ($tags as $tag)
-                <option value="{{ $tag->id}}">{{$tag->name}}</option>
+                <option value="{{ $tag->id}}"
+                  @foreach ($post->tags as $postTag)
+                  @if ($postTag->id == $tag->id)
+                  selected
+                  @endif
+                  @endforeach
+
+                  >{{$tag->name}}</option>
                 @endforeach
                 
 
@@ -82,7 +89,13 @@
               <label>Select Category</label>
               <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="categories[]>
                 @foreach ($categories as $category)
-                <option value="{{ $category->id}}">{{$category->name}}</option>
+                <option value="{{ $category->id}}"
+                  @foreach ($post->categories as $postCategory)
+                  @if ($postCategory->id == $category->id)
+                  selected
+                  @endif
+                  @endforeach
+                  >{{$category->name}}</option>
                 @endforeach
               </select>
             </div>
@@ -110,9 +123,8 @@
             
             <!-- /.box-header -->
             <div class="box-body pad">
-
-              <textarea class="textarea" placeholder="Place some text here" name="body"
-              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$post->body}}</textarea>
+              
+                <textarea name= "body" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" id="editor1">{{$post->body}}</textarea>
               
             </div>
           </div>
@@ -134,9 +146,21 @@
 
 @section ('footerSection')
 <script src="{{asset('admin/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{asset('admin/ckeditor/ckeditor.js')}}"></script>
+<!-- <script src="//cdn.ckeditor.com/4.11.1/full/ckeditor.js"></script> -->
+<script>
+  
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+</script>
 <script>
   $(document).ready(function(){
     $('.select2').select2();
   });
-</script>>
+</script>
 @endsection
