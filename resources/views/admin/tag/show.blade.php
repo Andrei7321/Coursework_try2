@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('headSection')
-    <link rel="stylesheet"  href="{{asset('/admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">>
+    <link rel="stylesheet"  href="{{asset('/admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
 @endsection
     
 @section('main-content')
@@ -113,8 +113,8 @@
 
 @section('footerSection')
 <!-- DataTables -->
-<script src="{{asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>>
-<script src="{{asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>>
+<script src="{{asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 
 
 <!-- <script src="../../dist/js/adminlte.min.js"></script> -->
