@@ -1,0 +1,105 @@
+<?php
+
+namespace App\Policies;
+
+use App\Model\admin\admin;
+// use App\Model\user\post;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class PostPolicy
+{
+    use HandlesAuthorization;
+
+    /**
+     * Determine whether the admin can view the post.
+     *
+     * @param  \App\Model\user\admin  $user
+     * @param  \App\post  $post
+     * @return mixed
+     */
+    public function view(admin $user)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the admin can create posts.
+     *
+     * @param  \App\Model\user\admin  $user
+     * @return mixed
+     */
+    public function create(admin $user)
+    {
+        return $this->getpermission($user, 1);
+    }
+
+    /**
+     * Determine whether the admin can update the post.
+     *
+     * @param  \App\Model\user\admin  $user
+     * @param  \App\post  $post
+     * @return mixed
+     */
+    public function update(admin $user)
+    {
+        return $this->getpermission($user, 2);
+    }
+
+    /**
+     * Determine whether the admin can delete the post.
+     *
+     * @param  \App\Model\user\admin  $user
+     * @param  \App\post  $post
+     * @return mixed
+     */
+    public function delete(admin $user)
+    {
+        return $this->getpermission($user, 15);
+    }
+
+    public function tag(admin $user)
+    {
+        return $this->getpermission($user, 20);
+    }
+
+    public function category(admin $user)
+    {
+        return $this->getpermission($user, 21);
+    }
+
+    protected function getpermission($user,$p_id)
+    {
+        foreach ($user->roles as $role) {
+            foreach ($role->permissions as $permission) {
+                if ($permission->id == $p_id) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Determine whether the admin can restore the post.
+     *
+     * @param  \App\Model\user\admin  $user
+     * @param  \App\post  $post
+     * @return mixed
+     */
+    public function restore(admin $user)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the admin can permanently delete the post.
+     *
+     * @param  \App\Model\user\admin  $user
+     * @param  \App\post  $post
+     * @return mixed
+     */
+    public function forceDelete(admin $user)
+    {
+        //
+    }
+}

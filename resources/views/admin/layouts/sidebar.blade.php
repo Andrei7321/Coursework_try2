@@ -8,7 +8,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Трудяга Админ</p>
+          <p>{{Auth::user()->name}}</p>
         </div>
       </div>
       <!-- search form -->
@@ -26,11 +26,16 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-            <li class=""><a href="{{route('post.index')}}"><i class="fa fa-circle-o"></i> Posts </a></li>
-            <li class=""><a href="{{route('category.index')}}"><i class="fa fa-circle-o"></i> Categories </a></li>
-            <li class=""><a href="{{route('tag.index')}}"><i class="fa fa-circle-o"></i> Tags </a></li>  
-            <li class=""><a href="{{route('user.index')}}"><i class="fa fa-circle-o"></i> Users </a></li>
-            <li class=""><a href="{{route('role.index')}}"><i class="fa fa-circle-o"></i> Roles </a></li>       
+            <li class=""><a href="{{route('post.index')}}"><i class="fa fa-circle-o"></i>Posts</a></li>
+            @can('posts.category',Auth::user())
+                <li class=""><a href="{{route('category.index')}}"><i class="fa fa-circle-o"></i>Categories</a></li>
+            @endcan
+            @can('posts.tag',Auth::user())
+            <li class=""><a href="{{route('tag.index')}}"><i class="fa fa-circle-o"></i>Tags</a></li>
+            @endcan  
+            <li class=""><a href="{{route('user.index')}}"><i class="fa fa-circle-o"></i>Users</a></li>
+            <li class=""><a href="{{route('role.index')}}"><i class="fa fa-circle-o"></i>Roles</a></li>
+            <li class=""><a href="{{route('permission.index')}}"><i class="fa fa-circle-o"></i>Permissions</a></li>       
         </li>
         
         

@@ -4,7 +4,7 @@
     </div>
 
 
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2017-{{Carbon\carbon::now()->year}} <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
     reserved.
 
      <!-- jQuery 3 -->
