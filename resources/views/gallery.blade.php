@@ -21,9 +21,11 @@
     <!-- Custom styles for this template -->
     <link href="{{asset('user/css/clean-blog.min.css')}}" rel="stylesheet">
 
+
   </head>
 
   <body>
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -43,11 +45,11 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about">About</a>
-            </li>
+            <li>
             <li class="nav-item">
               <a class="nav-link" href="contact">Contact</a>
             </li>
-             <li class="nav-item">
+                         <li class="nav-item">
               @if (Auth::guest())
                   <a class="nav-link" href="{{ route('login')}}">Login</a>
               @else
@@ -68,14 +70,13 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('{{asset('user/img/contact-bg.jpg') }}')">
+    <header class="masthead" style="background-image: url('{{asset('user/img/Uaz-Logo-Symbol-Vector-Free-Download.jpg') }}')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1>Contact Me</h1>
-              <span class="subheading">Have questions? I have answers.</span>
+              
             </div>
           </div>
         </div>
@@ -86,42 +87,43 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div id="text"></div>
-
-    {!! Form::open(['url' => 'send-mail']) !!}
-      <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
-      <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <p>{{ Form::text('name', '', ['class'=>'textbox', 'placeholder'=>'Your name...']) }}</p>
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-      <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <p>{{ Form::email('email', '', ['class'=>'textbox', 'placeholder'=>'Your email...' ,'pattern' =>'[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$']) }}</p>
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-      <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <p>{{ Form::textarea('msg', '', ['class'=>'textbox', 'placeholder'=>'Your message...']) }}</p>
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-      <br>
-      <div id="success"></div>
-      <div class="form-group">
-              {{ Form::submit('Send', ['class'=>'button']) }}
-            </div>
-      
-    {!! Form::close() !!}
-    <!-- <img src='https://media.giphy.com/media/PkXuh8TFTlBRK/giphy.gif'> -->
-    <script src="js/scripts.js"></script>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{{asset('user/img/1.jpg')}}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('user/img/2_1.jpg')}}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('user/img/avtomobili-uaz-2360-855654.jpg')}}" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('user/img/UAZ-Hunter-Trophy-2015-1920x1080-001.jpg')}}" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
         </div>
       </div>
     </div>
 
+
+
     <hr>
+
 
     <!-- Footer -->
     <footer>
@@ -160,13 +162,11 @@
       </div>
     </footer>
 
+    
+
     <!-- Bootstrap core JavaScript -->
     <script src="{{asset('user/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('user/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="{{asset('user/js/jqBootstrapValidation.js')}}"></script>
-    <script src="{{asset('user/js/contact_me.js')}}"></script>
 
     <!-- Custom scripts for this template -->
     <script src="{{asset('user/js/clean-blog.min.js')}}"></script>

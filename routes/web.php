@@ -29,6 +29,10 @@ Route::get('contact', function () {
     return view('contact');
 });
 
+Route::get('gallery', function () {
+    return view('gallery');
+});
+
 Route::post('/send-mail', 'MailSetting@send_form');
 
 Route::group(['namespace' => 'User'],function(){
