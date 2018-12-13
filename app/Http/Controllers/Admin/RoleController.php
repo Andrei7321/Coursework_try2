@@ -5,9 +5,19 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\admin\role;
+use App\Model\admin\Permission;
 
 class RoleController extends Controller
 {
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,8 +36,11 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $roles = role::all();
-        return view('admin.role.create', compact('roles'));
+
+        $permissions = Permission::all();
+        return view('admin.role.create', compact('permissions'));
+        // $roles = role::all();
+        // return view('admin.role.create', compact('roles'));
     }
 
     /**
@@ -47,6 +60,7 @@ class RoleController extends Controller
         $role = new role;
         $role->name = $request->name;
         $role->save();
+        $role->permissions()->sync($request->permission);
         return redirect(route('role.index'));
     }
 
@@ -67,11 +81,15 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+ 
     public function edit($id)
     {
     	$role = role::find($id);
-        return view('admin.role.edit',compact('role'));
+        $permissions = Permission::all();
+        return view('admin.role.edit',compact('role','permissions'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -82,6 +100,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $this->validate($request,[
 
         	'name'=>'required|max:50'
@@ -91,6 +110,7 @@ class RoleController extends Controller
         $role = role::find($id);
         $role->name = $request->name;
         $role->save();
+        $role->permissions()->sync($request->permission);
         return redirect(route('role.index'));
     }
 
