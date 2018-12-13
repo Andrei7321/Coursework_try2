@@ -87,38 +87,161 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{{asset('user/img/1.jpg')}}" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('user/img/2_1.jpg')}}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('user/img/avtomobili-uaz-2360-855654.jpg')}}" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('user/img/UAZ-Hunter-Trophy-2015-1920x1080-001.jpg')}}" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+          
         </div>
       </div>
     </div>
+    <hr>
+    <div class="container section">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{asset('user/img/1.jpg')}}" alt=""/>
+                </div>
+                <div class="col-md-6">
+                    <h3>
+                        UAZ Patriot
+                    </h3>
+                    <h4>
+                        Price: 430 000 ₽
+                    </h4>
+                    <p>
+                      <ul>
+                       <li>Gearbox: mechanical Mileage: 85000 km</li>
+                       <li>Engine power: 128 hp</li>
+                       <li>Number of doors: 5</li>
+                       <li>Owners by TCP: 3</li>
+                       <li>Condition: not beaten</li>
+                      </ul>
+                    </p>
+                </div>
+                    <div class="collapse-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
+                                      Read more
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                      bla-bla-bla...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{asset('user/img/2_1.jpg')}}" alt=""/>
+                </div>
+                <div class="col-md-6">
+                    <h3>
+                        UAZ "Loaf" Van 3741
+                    </h3>
+                    <h4>
+                        Price: 390 000 ₽
+                    </h4>
+                    <p>
+                       <ul>
+                         <li>Gearbox: mechanical Mileage: 5000 km</li>
+                         <li>Engine power: 74 hp</li>
+                         <li>Number of doors: 5</li>
+                         <li>Owners by TCP: 3</li>
+                         <li>Condition: not beaten</li>
+                      </ul>
+                    </p>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+                               Read more
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            bla-bla-bla...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{asset('user/img/avtomobili-uaz-2360-855654.jpg')}}" alt=""/>
+                </div>
+                <div class="col-md-6">
+                    <h3>
+                        UAZ Pickup
+                    </h3>
+                    <h4>
+                        Price: 420 000 ₽
+                    </h4>
+                    <p>
+                       <ul>
+                         <li>Gearbox: mechanical Mileage: 83346 km</li>
+                         <li>Engine power: 135 hp</li>
+                         <li>Number of doors: 4</li>
+                         <li>Owners by TCP: 3</li>
+                         <li>Condition: not beaten</li>
+                      </ul>
+                    </p>
+                </div>
+                <div class="collapse-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="trigger">
+                                  Read more
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                bla-bla-bla...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{asset('user/img/UAZ-Hunter-Trophy-2015-1920x1080-001.jpg')}}" alt=""/>
+                </div>
+                <div class="col-md-6">
+                    <h3>
+                        UAZ Hunter
+                    </h3>
+                    <h4>
+                        Price: 340 000 ₽
+                    </h4>
+                    <p>
+                       <ul>
+                         <li>Gearbox: mechanical Mileage: 100000 km</li>
+                         <li>Engine power: 114 hp</li>
+                         <li>Number of doors: 5</li>
+                         <li>Owners by TCP: 2</li>
+                         <li>Condition: not beaten</li>
+                      </ul>
+                    </p>
+                </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour" class="trigger">
+                                   Read more
+                                </a>
+                            </h4>
+                        </div>
+                            <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    bla-bla-bla...
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            </div>
+        </div>
 
 
 
